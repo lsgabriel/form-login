@@ -37,7 +37,7 @@ export const Container = styled.div`
                 }
             }
 
-            input[type='email'], input[type='password']{
+            input[type='email']{
                 margin-block: 10px;width:384px;
                 border:solid 1px #E2E8F0;
                 border-radius:0.25rem;
@@ -52,6 +52,38 @@ export const Container = styled.div`
                 }
 
                 @media only screen and (max-width: 450px){width:80vw;}
+            }
+
+            input[type='password']{
+                border:none;padding: 16px 12px 16px 12px;width:90vw;
+
+                ::placeholder,::-webkit-input-placeholder {
+                 color: #94A3B8;
+                }
+            }
+            
+            .password-input{
+                display: flex;
+                justify-content: space-between;align-items:center;
+                flex-direction: row;
+                border-radius:0.25rem;
+                margin-block: 10px;
+                background-color: #FFFFFF;
+                border:solid 1px #E2E8F0;
+               
+                    .eye-icon{
+                        padding-right:12px;
+
+                        &:hover{
+                            color: red;
+                        }
+                    }
+
+                &:hover{
+                    border-color: #7C3AED;
+                }
+
+                @media only screen and (max-width: 450px){width:86vw;}
             }
 
             button{

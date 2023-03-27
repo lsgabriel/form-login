@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import {Container} from './css/styles';
 
 import Logo from './assets/logo.svg';
+import eye from './assets/eye.png';
 
 function App() {
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <Container className="container">
       <form>
@@ -22,8 +29,9 @@ function App() {
             <span>
               <label for="password">Senha</label><a href="#">Esqueceu a senha?</a>
             </span>
-            <div>
-              <input type='password' id="password" placeholder='Digite sua senha'/>
+            <div className="password-input">
+              <input type={passwordShown ? "text" : "password"} id="password" placeholder='Digite sua senha'/>  
+              <img className="eye-icon" onClick={togglePassword} src={eye} />
             </div>
 
           <button>Entrar</button>
